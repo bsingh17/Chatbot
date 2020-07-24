@@ -27,7 +27,7 @@ def redirectToSlot(slot, value, dispatcher, tracker, remapping):
             dispatcher.utter_message(template="utter_wrong_school")
             response = {slot: None}
     elif (slot == "mailid"):
-        regex = r'^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+        regex = r'^([a-zA-Z0-9_\-\.]+)[@]([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
         print("red", slot, value)
         if(re.search(regex, value)):
             response = {slot: value}
@@ -39,11 +39,17 @@ def redirectToSlot(slot, value, dispatcher, tracker, remapping):
             if(value.isdigit()):
                 response = {slot: value}
             else:
+                dispatcher.utter_message(template="utter_wrong_phonenumberalpha")
                 response = {slot: None}  
-                dispatcher.utter_message(template="utter_wrong_phonenumberalpha")                
         else:
-            response = {slot: None}  
             dispatcher.utter_message(template="utter_wrong_phonenumber")
+            response = {slot: None}
+    elif (slot == "portion"):
+        if(value.isdigit() or value.lower() == 'all'):
+            response = {slot: value}
+        else:
+            dispatcher.utter_message(template="utter_wrong_portionalpha")
+            response = {slot: None}
 
     if (type(remapping) == str):
         response[remapping] = None
@@ -77,7 +83,7 @@ class StudentInfoForm(FormAction):
         print("validate_phone_number() method  ", value)
 
         requestedSlot = tracker.get_last_event_for("slot", skip=1)
-        if (requestedSlot['name'] == 'requested_slot' and requestedSlot['value']):
+        if (requestedSlot['name'] == 'requested_slot'):
             if (requestedSlot['value'] == 'phone_number'): # If requested slot was phone_number and value also corresponds to the phone_number 
                 return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
             else: # If value corresponds to the wrong slot
@@ -95,7 +101,7 @@ class StudentInfoForm(FormAction):
         """Validate mailid."""
         value=tracker.get_slot("mailid")
 
-        print("validate_mailid() method  ", value)
+        print("validate_mailid() method", value)
 
         requestedSlot = tracker.get_last_event_for("slot", skip=1)
         if (requestedSlot['name'] == 'requested_slot' and requestedSlot['value']):
@@ -119,7 +125,7 @@ class StudentInfoForm(FormAction):
         print("validate_username() method", value)
 
         requestedSlot = tracker.get_last_event_for("slot", skip=1)
-        if (requestedSlot['name'] == 'requested_slot' and requestedSlot['value']):
+        if (requestedSlot['name'] == 'requested_slot'):
             if (requestedSlot['value'] == 'username'): # If requested slot was username and value also corresponds to the username 
                 return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
             else: # If value corresponds to the wrong slot
@@ -140,7 +146,7 @@ class StudentInfoForm(FormAction):
         print("validate_school() method", value)
 
         requestedSlot = tracker.get_last_event_for("slot", skip=1)
-        if (requestedSlot['name'] == 'requested_slot' and requestedSlot['value']):
+        if (requestedSlot['name'] == 'requested_slot'):
             if (requestedSlot['value'] == 'school'): # If requested slot was school and value also corresponds to the school 
                 return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
             else: # If value corresponds to the wrong slot
@@ -178,6 +184,90 @@ class ShowCoursesForm(FormAction):
             "subject",
             "portion",
             ]
+
+    def validate_board(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+     ) -> Dict[Text, Any]:
+        """Validate board."""
+        value=tracker.get_slot("board")
+
+        print("validate_board() method", value)
+
+        requestedSlot = tracker.get_last_event_for("slot", skip=1)
+        if (requestedSlot['name'] == 'requested_slot'):
+            if (requestedSlot['value'] == 'board'): # If requested slot was board and value also corresponds to the board 
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
+            else: # If value corresponds to the wrong slot
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, 'board')
+        else:
+            return redirectToSlot('board', value, dispatcher, tracker, None)
+
+    def validate_standard(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+     ) -> Dict[Text, Any]:
+        """Validate standard."""
+        value=tracker.get_slot("standard")
+
+        print("validate_standard() method", value)
+
+        requestedSlot = tracker.get_last_event_for("slot", skip=1)
+        if (requestedSlot['name'] == 'requested_slot'):
+            if (requestedSlot['value'] == 'standard'): # If requested slot was standard and value also corresponds to the standard 
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
+            else: # If value corresponds to the wrong slot
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, 'standard')
+        else:
+            return redirectToSlot('standard', value, dispatcher, tracker, None)
+
+    def validate_subject(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+     ) -> Dict[Text, Any]:
+        """Validate subject."""
+        value=tracker.get_slot("subject")
+
+        print("validate_subject() method", value)
+
+        requestedSlot = tracker.get_last_event_for("slot", skip=1)
+        if (requestedSlot['name'] == 'requested_slot'):
+            if (requestedSlot['value'] == 'subject'): # If requested slot was subject and value also corresponds to the subject 
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
+            else: # If value corresponds to the wrong slot
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, 'subject')
+        else:
+            return redirectToSlot('subject', value, dispatcher, tracker, None)
+
+    def validate_portion(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+     ) -> Dict[Text, Any]:
+        """Validate portion."""
+        value=tracker.get_slot("portion")
+
+        print("validate_portion() method", value)
+
+        requestedSlot = tracker.get_last_event_for("slot", skip=1)
+        if (requestedSlot['name'] == 'requested_slot'):
+            if (requestedSlot['value'] == 'portion'): # If requested slot was portion and value also corresponds to the portion 
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, None)
+            else: # If value corresponds to the wrong slot
+                return redirectToSlot(requestedSlot['value'], value, dispatcher, tracker, 'portion')
+        else:
+            return redirectToSlot('portion', value, dispatcher, tracker, None)
 
     def submit(
         self,
