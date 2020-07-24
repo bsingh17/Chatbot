@@ -18,7 +18,8 @@ pipeline:
   - name: DIETClassifier
     batch_strategy: sequence
     epochs: 100
-  - name: EntitySynonymMapper
+  #- name: EntitySynonymMapper
+  - name: CRFEntityExtractor
   - name: ResponseSelector
     epochs: 100
 
