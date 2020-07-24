@@ -164,7 +164,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -178,7 +178,7 @@
 	- form{"name":null}
 	- utter_free_course_link
 * not_interested
-    - utter_we_will_come_with_new_courses   
+        - utter_we_will_come_with_new_courses   
 * thankyou
 	- utter_noworries
 * goodbye
@@ -329,7 +329,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -431,7 +431,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -550,7 +550,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -609,7 +609,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -630,7 +630,7 @@
 * payment
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -646,7 +646,7 @@
 * free_course
 	- utter_free_course_link
 * not_interested
-    - utter_we_will_come_with_new_courses   
+        - utter_we_will_come_with_new_courses   
 * thankyou
 	- utter_noworries
 * goodbye
@@ -941,7 +941,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -1295,7 +1295,7 @@
 * faq	
 	- respond_faq
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -1590,7 +1590,7 @@
 * payment	
 	- utter_payment_page
 * not_interested
-    - utter_we_will_come_with_new_courses
+        - utter_we_will_come_with_new_courses
 * thankyou
 	- utter_noworries
 * goodbye
@@ -1732,10 +1732,155 @@
 * goodbye
 	- utter_bye
 
+## path 66
+* price
+	- info_form
+	- form{"name": "info_form"}
+	- form{"name":null}
+	- utter_tell_price
+* about_product
+	- utter_explain_product
+* faq
+	- respond_faq
+* ask_help
+	- action_ask_bot
+* course
+	- show_courses_form
+	- form{"name": "show_courses_form"}
+	- form{"name":null}
+* registration	
+	- utter_registration_link
+* payment	
+	- utter_payment_page
+* payment_confirmation
+	- action_payment_done
+* thankyou
+	- utter_noworries
+* goodbye
+	- utter_bye
+
+## path 67
+* price
+	- info_form
+	- form{"name": "info_form"}
+	- form{"name":null}
+	- utter_tell_price
+* faq
+	- respond_faq
+* about_product
+	- utter_explain_product
+* ask_help
+	- action_ask_bot
+* course
+	- show_courses_form
+	- form{"name": "show_courses_form"}
+	- form{"name":null}
+* registration	
+	- utter_registration_link
+* payment	
+	- utter_payment_page
+* payment_confirmation
+	- action_payment_done
+* thankyou
+	- utter_noworries
+* goodbye
+	- utter_bye
+
+## path 68
+* price
+	- info_form
+	- form{"name": "info_form"}
+	- form{"name":null}
+	- utter_tell_price
+* about_product
+	- utter_explain_product
+* ask_help
+	- action_ask_bot
+* course
+	- show_courses_form
+	- form{"name": "show_courses_form"}
+	- form{"name":null}
+* registration	
+	- utter_registration_link
+* payment	
+	- utter_payment_page
+* faq
+	- respond_faq
+* payment_confirmation
+	- action_payment_done
+* thankyou
+	- utter_noworries
+* goodbye
+	- utter_bye
+
+## path 69
+* about_missionED
+	- info_form
+	- form{"name": "info_form"}
+	- form{"name":null}
+	- utter_intro_to_MissionEd
+* about_product
+	- utter_explain_product
+* ask_help
+	- action_ask_bot
+* registration
+	- utter_registration_link
+* free_course
+	- utter_free_course_link
+* not_interested
+	- utter_tell_about_paid_courses
+* faq
+	- respond_faq
+* course
+	- show_courses_form
+	- form{"name": "show_courses_form"}
+	- form{"name":null}
+* price
+	- utter_tell_price
+* payment	
+	- utter_payment_page
+* not_interested
+        - utter_we_will_come_with_new_courses
+* thankyou
+	- utter_noworries
+* goodbye
+	- utter_bye 
+
+## path 70
+* about_missionED
+	- info_form
+	- form{"name": "info_form"}
+	- form{"name":null}
+	- utter_intro_to_MissionEd
+* about_product
+	- utter_explain_product
+* ask_help
+	- action_ask_bot
+* registration
+	- utter_registration_link
+* free_course
+	- utter_free_course_link
+* not_interested
+	- utter_tell_about_paid_courses
+* course
+	- show_courses_form
+	- form{"name": "show_courses_form"}
+	- form{"name":null}
+* price
+	- utter_tell_price
+* payment	
+	- utter_payment_page
+* faq
+	- respond_faq
+* not_interested
+        - utter_we_will_come_with_new_courses
+* thankyou
+	- utter_noworries
+* goodbye
+	- utter_bye 
 
 
-
-
+	
 
 ## ask_bot
 * ask_help
@@ -1749,4 +1894,4 @@
 	- info_form
 	- form{"name": "info_form"}
 	- form{"name":null}
-    - utter_i_am_MissionEd_bot
+        - utter_i_am_MissionEd_bot
