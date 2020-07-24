@@ -2760,42 +2760,31 @@
 - [The Mother's International School](school)
 - [The Shri Ram School](school)
 - [Vasant Valley School](school)
-- I am in [8th](standard) standard
+- I am in [1](standard) standard
+- i am in [2](standard) standard
+- i am in [3](standard) standard
+- i am in [4](standard) standard
+- i am in [5](standard) standard
+- i am in [6](standard) standard
+- i am in [7](standard) standard
 - i am in [8](standard) standard
 - i am in [9](standard) standard
 - i am in [10](standard) standard
 - i am in [11](standard) standard
 - i am in [12](standard) standard
-- i am in [plus one](standard) standard
-- i am in [plus two](standard) standard
-- i am in [+1](standard) standard
-- i am in [+2](standard) standard
-- i am in [8th](standard) standard
-- i am in [9th](standard) standard
-- i am in [10th](standard) standard
+- i am in [12+](standard) standard
+- [1](standard)
+- [2](standard)
+- [4](standard)
+- [3](standard)
+- [5](standard)
+- [6](standard)
+- [7](standard)
 - [8](standard)
-- [9](standard)
 - [10](standard)
-- [11](standard)
 - [12](standard)
-- [plus one](standard)
-- [plus two](standard)
-- [+1](standard)
-- [+2](standard)
-- [8th](standard)
-- [9th](standard)
-- [10th](standard)
-- i am in [8](standard)
-- i am in [9](standard)
-- i am in [10](standard)
-- i am in [11](standard)
-- i am in [12](standard)
-- i am in [plus one](standard)
-- i am in [plus two](standard)
-- i am in [+1](standard)
-- i am in [+2](standard)
-- i am in [8th](standard)
-- i am in [9th](standard)
+- [11](standard)
+- [12+](standard)
 - [Maths](subject)
 - I want to enroll in [maths](subject)
 - I wanted some help in [maths](subject)
@@ -2933,7 +2922,23 @@
 - [CBSE](board)
 - [ICSE](board)
 - [IB](board)
-## intent:ask_builder
+- I am in [IB](board)
+- My school is [IB](board) affiliated
+- My school is affiliated to [IB](board)
+- My school falls under [IB](board)
+- My school follows [IB](board) regulation
+- [IB](board) affiliated
+- [IB](board) regulation
+- I am in [ICSE](board)
+- My school is [ICSE](board) affiliated
+- My school is affiliated to [ICSE](board)
+- My school falls under [ICSE](board)
+- My school follows [ICSE](board) regulation
+- [ICSE](board) affiliated
+- [ICSE](board) regulation
+
+
+## intent:faq/ask_builder
 - can you share your boss with me?
 - i want to get to know your owner
 - i want to know the company which designed you
@@ -3053,7 +3058,7 @@
 - Who were you built by?
 - who is your creator
 
-## intent:ask_languagesbot
+## intent: faq/ask_languagesbot
 - What languages can you use?
 - Which languages do you speak?
 - What are the languages you can speak?
@@ -3129,12 +3134,33 @@
 - see you later alligator
 - we'll speak soon
 
-## intent:feedback
+## intent:faq/feedback
 - I want to give my feedback
 - where can I give my feedback?
 - where am I supposed to give my feedback?
 - I wanted to give feedback
 - feedback
+- help me to give my feedback
+- direct me to the feedback page
+- Hey bot direct me to the feedback page
+- Hey bot where can i give my feedback
+- Where to submit my feedback
+- Can i give some suggestions?
+- Where should i suggest some changes?
+- Hey bot where i need to submit my feedback
+- Hey bot give me the feedback link.
+- Hey bot can you give me the feedback link?
+- Hey bot please give me the feedback link?
+- Hey do you have a feedback page?
+- Hey where shall i submit my feedback?
+- hey where can we submit our feedback?
+- Hey bot where shall we submit our feed back?
+- Can you send me the feedback link?
+- feedback link
+- feedback page
+- direct to feedback page
+- show feedback link
+- send feedback link
 
 ## intent:bot_challenge
 - are you a bot?
@@ -3161,6 +3187,32 @@
 - hey bot would you like to help me.
 - bot help me.
 - help me.
+- I am facing some trouble, please help me.
+- What all you can do?
+- Tell me what can you do for me?
+- what can you do for me?
+- in what all ways you can help me?
+- how can you solve my problem?
+- I am facing some difficulty?
+- Tell me what you can do?
+- hey bot help me.
+- help me to proceed further.
+- How should i proceed further?
+- How shall i proceed ahead?
+- How can i go ahead?
+- What all i need to do?
+- Can you help me to proceed?
+- What all tasks can you perform?
+- Can you help me to proceed further?
+- Can you show me the way to proceed further?
+- Show me the way to proceed further?
+- Show me the way to proceed ahead?
+- How can you help me?
+- Help me out bot
+- please help me out
+- i am facing trouble can you please help me
+- hey bot please help me 
+- hey bot help me out
 
 ## intent: faq/timing
 - what time is the doubt clearing session held?
@@ -3174,7 +3226,30 @@
 - clarify my problem
 - When will I have access to the lectures and assignments?
 - timing of classes
-
+- doubt session
+- when are doubt sessions held?
+- when will the doubt sessions be held?
+- tell me about the doubt sessions?
+- time for doubt sessions?
+- How many days for doubt session?
+- Are there any doubt sessions held?
+- Hey bot are there any doubt sessions held at MissionEd?
+- Please tell me about the doubt session.
+- Give me the details of doubt session
+- Tell me about doubt clearing sessions?
+- Will the student be getting doubt clearing sessions?
+- Is there any facility like doubt clearing session?
+- are you providing doubt clearing sessions to students?
+- will you be organising any doubt clearing sessions for the students?
+- are there any doubt sessions organised for students
+- Are you organising any doubt sessions at MissionED?
+- Can anybody join the doubt session?
+- Is there any facility like doubt clearing sessions?
+- Are there any doubt sessions held at MissionED?
+- Do you help student by organising doubt sessions?
+- Is MissionED organising any doubt sessions for students?
+- Can you give me the details of doubt sessions?
+- Tell me more about the doubt sessions at MissionED?
 
 ## intent: faq/refund
 - is there any refund?
@@ -3186,10 +3261,54 @@
 - Is financial aid available?
 - financial aid 
 - scholarship
+- will you any refund?
+- Will you be giving a refund if i am not willing to continue?
+- Is their any refund policy if i am not willing to continue?
+- Hey bot can you please tell me about refund policy at MissionED?
+- Please tell me about the refund policy.
+- any refund policy at MissionEd?
+- any refund policy?
+- Do you provide refunds?
+- Can i get a refund if i don't want to continue?
+- can i get refund?
+- I want my money back.
+- I want a refund.
+- Give me refund
+- Give me my money back
+- I don't want to continue give me my money back.
+- I don't want to continue, i want a refund.
+- till when can i get refund?
+- deadline for applying for a refund
+- what is the last date to apply for a refund?
+- end date to apply for refund
+- till when i can appply for refund?
+- hey bot i want refund
+- I am not continuing so i want my money back.
 
 
 # intent: not_interested
-
+- Stop the process
+- I would not like to continue
+- I wouldn't like to continue
+- stop this process
+- Do not proceed
+- Do not proceed further
+- Do not proceed ahead
+- don't proceed ahead
+- i wouldn't proceed ahead
+- stop it bot
+- stop bot
+- don't proceed with the process
+- Do not proceed with the process
+- Do not proceed the process ahead
+- I am not willing to continue
+- I'm not willing to continue
+- Its not my type
+- I would not like to proceed 
+- I am not willing to proceed 
+- Naah this is not what i want
+- No this is not for what i am here
+- no this is not what i want
 - I am not interested
 - not interested
 - I am not at all interested
@@ -3201,3 +3320,18 @@
 - I don't want to continue
 - i don't think it will be helpful
 - I am not interested in your courses
+
+## regex:mailid
+- ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
+## regex:username
+- ^[a-zA-Z ,.'-]+$
+## regex:phone_number
+- [0-9]{10}
+## regex:school
+- ^[#.0-9a-zA-Z\s,-]+$
+## regex:subject
+- ^[a-zA-Z -]+$
+## regex:board
+- ^cbse$|^icse$|^state$|^ib$/i
+## regex:portion
+- ^[1-9]+$
