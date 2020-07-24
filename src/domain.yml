@@ -1,191 +1,182 @@
-session_config:
-  session_expiration_time: 10
-  carry_over_slots_to_new_session: false
 intents:
-- greet
-- affirm
-- deny
-- payment
-- course
-- feedback
-- faq
-- free_course
-- thankyou
-- about_missionED
-- about_product
-- registration
-- price
-- inform
-- goodbye
-- payment_confirmation:
-    triggers: action_payment_done
-- bot_challenge
-- not_interested
-- ask_help:
-    triggers: action_ask_bot
-- ask_languagesbot
-- faq/timing
-- faq/refund
-- ask_builder
+  - greet
+  - affirm
+  - deny
+  - payment
+  - course
+  - faq
+  - free_course
+  - thankyou
+  - about_missionED
+  - about_product
+  - registration
+  - price
+  - inform
+  - goodbye
+  - payment_confirmation: {triggers: action_payment_done}
+  - bot_challenge
+  - not_interested
+  - ask_help: {triggers: action_ask_bot}
+
+  
+
+
+  
+forms:
+  - info_form
+  - show_courses_form
+  
 entities:
-- mailid
-- username
-- phone_number
-- school
-- board
-- standard
-- subject
-- portion
-slots:
-  board:
-    type: unfeaturized
-  mailid:
-    type: unfeaturized
-  phone_number:
-    type: unfeaturized
-  portion:
-    type: unfeaturized
-  school:
-    type: unfeaturized
-  standard:
-    type: unfeaturized
-  subject:
-    type: unfeaturized
-  username:
-    type: unfeaturized
+  - mailid
+  - username
+  - phone_number
+  - school
+  - board
+  - standard
+  - subject
+  - portion
+
+
+actions:
+  - action_ask_bot
+  - action_payment_done
+  - utter_noworries
+  - utter_bye
+  - respond_faq
+  - utter_intro_to_MissionEd
+  - utter_explain_product
+  - utter_i_am_MissionEd_bot
+  - utter_default
+  - utter_registration_link
+ 
+
 responses:
   utter_greet:
-  - text: Hello. Welcome to MissionEd.
+    - text: "Hello. Welcome to MissionEd. How can I help you?"
+  
   utter_noworries:
-  - text: Thankyou for visiting us. You are always welcome.
+    - text: "Thankyou for visiting us. You are always welcome."
+
   utter_bye:
-  - text: Bye. It was nice talking with you. See you again.
+    - text: "Bye. It was nice talking with you. See you again."
+
+
   utter_intro_to_MissionEd:
-  - text: One of India's fastest-growing edtech startups in the seed stage, MissionEd
-      provides online tutoring services for classes 8-12. Backed by IITians and AIIMS
-      students across the country, MissionEd has just one aim- to revolutionize the
-      way students from classes 8-12 learn. Besides providing quality content at a
-      low price, MissionEd leverages AI to help students understand their conceptual
-      clarity. We help students not only with their semester examinations but also
-      help them ace competitive examinations like NTSE, NSEJS, KVPY, Olympiads and
-      JEE.
+    - text: "One of India's fastest-growing edtech startups in the seed stage, MissionEd provides online tutoring services for classes 8-12. Backed by IITians and AIIMS students across the country, MissionEd has just one aim- to revolutionize the way students from classes 8-12 learn. Besides providing quality content at a low price, MissionEd leverages AI to help students understand their conceptual clarity. We help students not only with their semester examinations but also help them ace competitive examinations like NTSE, NSEJS, KVPY, Olympiads and JEE."
+
   utter_explain_product:
-  - text: MissionEd provides different courses to prepare not only for school semester
-      exams but also for competitive exams like international olympiads, jee, neet.
-      We provide 1 to 1 doubt clearing sessions by IITians, and also provide mock
-      test series, assignments, solutions and notes for each and every subject prepared
-      by IITians. We are working on our user experience by implementing AI.
+    - text: "MissionEd provides different courses to prepare not only for school semester exams but also for competitive exams like international olympiads, jee, neet. We provide 1 to 1 doubt clearing sessions by IITians, and also provide mock test series, assignments, solutions and notes for each and every subject prepared by IITians. We are working on our user experience by implementing AI.  "
+
   utter_tell_price:
-  - text: We charge the students a nominal price of Rs. 500 per month per subject.
+    - text: "We charge the students a nominal price of Rs. 500 per month per subject."
+
   utter_payment_page:
-  - text: 'Refer this link for payment portal: https://example.com/payment'
+    - text: "Refer this link for payment portal: https://example.com/payment"
+
   utter_registration_link:
-  - text: 'Click on the given link to proceed for registration: https://example.com/signup'
+    - text: "Click on the given link to proceed for registration: https://example.com/signup"
+  
   utter_free_course_link:
-  - text: Here is the list of all free courses, refer this link https://example.com/free-courses
+    - text: "Here is the list of all free courses, refer this link: https://example.com/free-courses"
   utter_ask_username:
-  - text: What is your name?
+    - text: What is your name?
   utter_ask_mailid:
-  - text: Please enter your mail id.
+    - text: Please enter your mail id.
   utter_ask_phone_number:
-  - text: Please enter your phone number.
+    - text: Please enter your phone number.
   utter_ask_school:
-  - text: Please enter your school name.
+    - text: Please enter your school name.
+
+
   utter_ask_board:
-  - buttons:
-    - payload: /inform{"board":"CBSE"}
-      title: CBSE
-    - payload: /inform{"board":"ICSE"}
-      title: ICSE
-    - payload: /inform{"board ":"IB"}
-      title: IB
-    - payload: /inform{"board":"state"}
-      title: STATE
-    text: Please enter your current board of education
+    - text: Please enter your current board of education
+      buttons:
+        - title: "CBSE"
+          payload: '/inform{"board":"CBSE"}'
+        - title: "ICSE"
+          payload: '/inform{"board":"ICSE"}'
+        - title: "IB"
+          payload: '/inform{"board ":"IB"}'
+        - title: "STATE"
+          payload: '/inform{"board":"state"}'
+
+
   utter_ask_standard:
-  - buttons:
-    - payload: /inform{"standard":"8"}
-      title: '8'
-    - payload: /inform{"standard":"9"}
-      title: '9'
-    - payload: /inform{"standard":"10"}
-      title: '10'
-    - payload: /inform{"standard":"11"}
-      title: '11'
-    - payload: /inform{"standard":"12"}
-      title: '12'
-    - payload: /inform{"standard":"12+"}
-      title: 12+
-    text: In which standard do you study?
+    - text: In which standard do you study?
+      buttons:
+        - title: "8"
+          payload: '/inform{"standard":"8"}'
+        - title: "9"
+          payload: '/inform{"standard":"9"}'
+        - title: "10"
+          payload: '/inform{"standard":"10"}'
+        - title: "11" 
+          payload: '/inform{"standard":"11"}'
+        - title: "12"
+          payload: '/inform{"standard":"12"}'
+        - title: "12+"
+          payload: '/inform{"standard":"12+"}'
+
+     
   utter_ask_subject:
-  - buttons:
-    - payload: /inform{"subject":"Physics"}
-      title: Physics
-    - payload: /inform{"subject":"Chemistry"}
-      title: Chemistry
-    - payload: /inform{"subject":"Maths"}
-      title: Maths
-    - payload: /inform{"subject":"Biology"}
-      title: Biology
-    text: In which subject would you like to enroll?
+    - text: In which subject would you like to enroll? 
+      buttons:
+        - title: "Physics"
+          payload: '/inform{"subject":"Physics"}'
+        - title: "Chemistry"
+          payload: '/inform{"subject":"Chemistry"}'
+        - title: "Maths"
+          payload: '/inform{"subject":"Maths"}'
+        - title: "Biology"
+          payload: '/inform{"subject":"Biology"}'
+
+
   utter_ask_portion:
-  - text: In which chapter are you facing difficulty?
+    - text: In which chapter are you facing difficulty?
   utter_ask_interested:
-  - text: Are you interested for this course?
+    - text: "Are you interested for this course?"
   utter_we_will_come_with_new_courses:
-  - text: Sorry we cant help you. We will surely try to improve our services and come
-      up with new courses.
+    - text: Sorry we cant help you. We will surely try to improve our services and come up with new courses.
+
   utter_tell_about_paid_courses:
-  - text: 'Here is the list of all paid courses, refer this link: https://example.com/paid-courses'
+    - text: "Here is the list of all paid courses, refer this link: https://example.com/paid-courses"
+  
   utter_tell_about_free_courses:
-  - text: 'Here is the list of all free courses, refer this link: https://example.com/free-courses'
+    - text: "Here is the list of all free courses, refer this link: https://example.com/free-courses"
+  
   utter_wrong_phonenumberalpha:
-  - text: phone number number must be of digit only
+    - text: "phone number number must be of digit only"
+
   utter_wrong_phonenumber:
-  - text: phone number number must be of 10 digits
+    - text: "phone number number must be of 10 digits"
+
   utter_wrong_emailid:
-  - text: invalid email!
+    - text: "invalid email!"
+
   utter_i_am_MissionEd_bot:
-  - text: I am MissionEd chatbot. Feel free to ask me anything.
-  utter_feedback:
-  - text: you can give your feedback at example.com/feedback
-  utter_suggestion:
-  - text: How can I help you? You can type Help Me to get a list of things you can
-      ask me to do.
+    - text: "I am MissionEd chatbot. Feel free to ask me anything.
+ 
   utter_default:
-  - text: Sorry, I didn’t understand that
-actions:
-- action_ask_bot
-- action_payment_done
-- utter_noworries
-- utter_bye
-- respond_faq
-- utter_intro_to_MissionEd
-- utter_explain_product
-- utter_i_am_MissionEd_bot
-- utter_default
-- utter_registration_link
-- utter_greet
-- utter_tell_price
-- utter_payment_page
-- utter_free_course_link
-- utter_ask_username
-- utter_ask_mailid
-- utter_ask_phone_number
-- utter_ask_school
-- utter_ask_board
-- utter_ask_standard
-- utter_ask_subject
-- utter_ask_portion
-- utter_ask_interested
-- utter_we_will_come_with_new_courses
-- utter_tell_about_paid_courses
-- utter_tell_about_free_courses
-- utter_wrong_phonenumberalpha
-- utter_wrong_phonenumber
-- utter_wrong_emailid
-- utter_feedback
-- utter_suggestion
-forms:
-- info_form
-- show_courses_form
+    - text: "Sorry, I didn’t understand that"
+
+slots:
+    username:
+        type: unfeaturized
+    mailid:
+        type: unfeaturized
+    phone_number:
+        type: unfeaturized
+    school:
+        type: unfeaturized
+    board:
+        type: unfeaturized
+    standard:
+        type: unfeaturized
+    subject: 
+        type: unfeaturized  
+    portion:
+        type: unfeaturized
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
